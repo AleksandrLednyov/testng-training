@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite1" verbose="1" allow-return-values="true">
+
+    <!--тестирование определенных групп с исключением некоторых методов-->
+
+    <test name="groups" preserve-order="false">
+        <groups>
+            <run>
+                <include name="test groups"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="simpleTests.FirstSimpleTest">
+                <methods>
+                    <exclude name="givenNumber_whenEven_thenTrue"/>
+                </methods>
+            </class>
+            <class name="date_serializer_service_test.DateSerializerServiceUnitTest"/>
+        </classes>
+    </test>
+
+    <!--    тестирование определённых пакетов-->
+
+    <!--    <test name="packages">-->
+    <!--        <packages>-->
+    <!--            <package name="date_serializer_service_test"/>-->
+    <!--        </packages>-->
+    <!--    </test>-->
+
+    <!--    тестирование определённых классов-->
+
+    <!--    <test name = "classes">-->
+    <!--        <classes>-->
+    <!--            <class name = "simpleTests.FirstSimpleTest"/>-->
+    <!--            <class name="simpleTests.SecondSimpleTest"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="serializer tests">-->
+    <!--        <classes>-->
+    <!--            <class name="date_serializer_service_test.DateSerializerServiceUnitTest"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+</suite>
